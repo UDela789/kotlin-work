@@ -19,4 +19,7 @@ fun main() {
     // double
     val root2 = Math.sqrt(2.0)
     println(root2::class)
+
+    val pi: Double = 3.14159
+
 }
