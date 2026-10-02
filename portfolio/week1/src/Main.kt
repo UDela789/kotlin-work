@@ -4,17 +4,20 @@
 import kotlin.math.sqrt
 import kotlin.system.exitProcess
 
-fun main(args: Array:String){
-
+fun main(args: Array<String>) {
+    
     if(args.size < 3){
         println("Error: values for a, b, c required on command line")
+        exitProcess(1)
     }
 
-    val a = arg[0].toFLoat
-    val b = arg[1].toFLoat
-    val c = arg[2].toFLoat
+    val a = args[0].toDouble()
+    val b = args[1].toDouble()
+    val c = args[2].toDouble()
 
-    val s = (a + b + c) / 2
-    val area  = math.sqrt(s(s-a)(s-b)(s-c))
+    val s : Double = (a + b + c) * 0.5
+    val area : Double = sqrt(s * (s-a) * (s-b) * (s-c))
 
+    System.out.printf("Area = %.5f\n", area)
+    
 }
