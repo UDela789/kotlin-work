@@ -2,14 +2,13 @@
 
 fun main() {
     // Add your code here
-    println("Pizza options: a, b, c, d: ")
+    print("Pizza options: a, b, c, d: ")
     val option = readln().lowercase()
 
     // selection
-    if(option in a..d && option.length == 1 ){
+    if (option in a..d && option.length == 1 ) {
         println("Order accepted")
-    }
-    else{
+    } else {
         println("Invalid choice!")
     }
 
