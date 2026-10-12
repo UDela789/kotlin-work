@@ -2,7 +2,13 @@
 
 fun main() {
     // Add your code here
-    print("Pizza options: a, b, c, d: ")
+    println("PIZZA MENU")
+    println("\n(a) Margherita")
+    println("(b) Meat")
+    println("(a) Veg")
+    println("(a) Ham")
+
+    print("\nPizza options: a, b, c, d: ")
     val option  = readln().lowercase()
 
     // selection
