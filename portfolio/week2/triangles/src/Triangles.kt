@@ -27,22 +27,9 @@ fun triangleArea(triangle: Triangle): Double {
     val a = triangle.first
     val b = triangle.second
     val c = triangle.third
-    val valid = isValidTriangle(triangle)
+    // val valid = isValidTriangle(triangle)
     val s = ((a + b + c) * 0.5)
     val area = sqrt(s*(s-a)*(s-b)*(s-c))
     
-
-    if(!(valid)){
-        return 0.0
-    }
-    else if(valid){
-        val area = sqrt(s*(s-a)*(s-b)*(s-c))
-        return area
-    }
-    else{
-        return 0.0
-    }
-
-    
-
+    return area
 }
