@@ -3,7 +3,7 @@
 
 fun redact(originalText: String, redactedText: String, Sub_text: Char = 'X'): String {
 
-    val words = originalText.split(" ")
+    val words = originalText.split(" ").toMutableList()
     for (word in words){
         if (word == redactedText){
             var redact = ""
