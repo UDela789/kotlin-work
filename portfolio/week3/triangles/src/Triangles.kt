@@ -27,7 +27,11 @@ fun triangleArea(triangle: Triangle): Double {
     val a = triangle.first
     val b = triangle.second
     val c = triangle.third
-    // val valid = isValidTriangle(triangle)
+
+    if(!(isValidTriangle(triangle))){
+        throw IllegalArgumentException("Invalid triangle")
+    }
+
     val s = ((a + b + c) * 0.5)
     val area = sqrt(s*(s-a)*(s-b)*(s-c))
     
