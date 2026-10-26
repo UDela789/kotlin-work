@@ -17,4 +17,19 @@ class MedianTest : FreeSpec({
     }
 
     // Write four more tests here
+    "Size of 1 is working"{
+        median(listOf(1.0f)) shouldBe 1.0
+    }
+
+    "Size of 2 is working"{
+        median(listOf(1.0f, 2.0f)) shouldBe 1.5
+    }
+
+    "Size of 3 is working"{
+        median(listOf(1.0f, 2.0f, 1.0f)) shouldBe 1.0
+    }
+
+    "Size of 4 is working"{
+        median(listOf(1.0f, 2.0f, 5.0f, 7.5f)) shouldBe 3.5
+    }
 })
