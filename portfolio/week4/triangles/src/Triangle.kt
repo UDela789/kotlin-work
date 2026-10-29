@@ -2,3 +2,5 @@
 // Triangle class
 
 import kotlin.math.sqrt
+
+class Triangle

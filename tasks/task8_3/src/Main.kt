@@ -4,4 +4,7 @@ import kotlin.system.exitProcess
 
 fun main(args: Array<String>) {
     // Add your code here
+    fetchData(args[0])
+    
+    val highest = 
 }
