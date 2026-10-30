@@ -24,13 +24,14 @@ fun isValidTriangle(triangle: Triangle): Boolean {
 }
 
 fun triangleArea(triangle: Triangle): Double {
+    if(!(isValidTriangle(triangle))){
+        throw IllegalArgumentException("Invalid triangle")
+    }
+    
     val a = triangle.first
     val b = triangle.second
     val c = triangle.third
 
-    if(!(isValidTriangle(triangle))){
-        throw IllegalArgumentException("Invalid triangle")
-    }
 
     val s = ((a + b + c) * 0.5)
     val area = sqrt(s*(s-a)*(s-b)*(s-c))
