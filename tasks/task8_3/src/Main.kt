@@ -4,7 +4,14 @@ import kotlin.system.exitProcess
 
 fun main(args: Array<String>) {
     // Add your code here
-    fetchData(args[0])
+    val dataset = fetchData(args[0])
+
+
+    val lowest = dataset.minBy { it.second }
+    val highest = dataset.maxBy { it.second }
+
+    println("lowest: ${lowest}, highest: {highest}")
     
-    val highest = 
+    
+    
 }
