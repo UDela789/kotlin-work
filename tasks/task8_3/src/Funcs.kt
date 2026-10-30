@@ -9,8 +9,11 @@ fun fetchData(filename: String) = buildList {
     // Finish the implementation of this function
     val path = Path(filename)
     
+    // for each line
     path.forEachLine {
-       add(it)      
+        // split lines into separate lists 
+        var splitted = it.split(",")
+       add(Record(splitted[0], splitted[1].toDouble()))      
     }
     
 }
