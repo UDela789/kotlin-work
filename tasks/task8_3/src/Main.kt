@@ -13,7 +13,8 @@ fun main(args: Array<String>) {
     val highest = dataset.maxBy { it.second }
 
     println("lowest: ${lowest}, highest: ${highest}")
-    
-    
+
+    var avgTemp = averageTemp(dataset)
+    println("average temp: %.2f".format(avgTemp))
     
 }
