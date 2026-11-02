@@ -13,7 +13,7 @@ fun fetchData(filename: String) = buildList {
     path.forEachLine {
         // split lines into separate lists 
         var splitted = it.split(",")
-       add(Record(splitted[0], splitted[1].toDouble()))      
+        add(Record(splitted[0], splitted[1].toDouble()))      
     }
     
 }
