@@ -10,10 +10,10 @@ class ToDoList() {
     private val items = mutableListOf<ToDoItem>()
 
     val size get() = items.size
-    val notStarted get() = 0   // compute no. of items with NotStarted status
-    val inProgress get() = 0   // compute no. of items with InProgress status
-    val done get() = 0         // compute no. of items with Done status
-    val overdue get() = 0      // compute no. of overdue items
+    val notStarted get() = items.count{it.status == ItemStatus.NotStarted}   // compute no. of items with NotStarted status
+    val inProgress get() =  items.count{it.status == ItemStatus.InProgress} // compute no. of items with InProgress status
+    val done get() = items.count{it.status == ItemStatus.Done}         // compute no. of items with Done status
+    val overdue get() = items.count{it.isOverdue()}      // compute no. of overdue items
 
     constructor(filename: String): this() {
         load(filename)
@@ -23,6 +23,8 @@ class ToDoList() {
         // Implement code to read To Do list from a file here
         // See data/to-do.csv for an example of the format
         val filePath = (filename)
+
+        
     
     }
 
