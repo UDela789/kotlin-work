@@ -22,8 +22,17 @@ class ToDoList() {
     fun load(filename: String) {
         // Implement code to read To Do list from a file here
         // See data/to-do.csv for an example of the format
-        val filePath = (filename)
+        
 
+        // for each line use .toString to convert it to valid format
+
+        println("load called with: $filename")
+        Path(filename).forEachLine { line ->
+            println("read line: $line")
+            val (date, status, description) = line.split(": ")
+            items.add(ToDoItem(LocalDate.parse(date), ItemStatus.valueOf(status), description))
+        }
+        println("items after load: ${items.size}")
         
     
     }
@@ -41,18 +50,20 @@ class ToDoList() {
     fun deleteDone(): Boolean {
         // Write code here to remove items with status of Done
         // Return true if any were removed, false if none were removed
-        return false
+        return items.removeAll {it.status == ItemStatus.Done}
+        
     }
 
     fun getItems(status: ItemStatus? = null): List<ToDoItem> {
         // Write code here to return a list of items with the matching
         // status, or a list of all items if status argument is null
-        return emptyList()
+       
+        return items.filter {it.status == status}
     }
 
     fun getItemsDueOn(date: LocalDate): List<ToDoItem> {
         // Write code here to return a list of items
         // that are due on the specified date
-        return emptyList()
+        return items.filter {it.dueDate == date}
     }
 }

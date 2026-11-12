@@ -13,6 +13,7 @@ fun main(args: Array<String>) {
     val date = LocalDate.parse(args[1])
     val toDo = ToDoList(args[0])
 
+
     println("Full list:")
     toDo.getItems().forEach(::println)
 
