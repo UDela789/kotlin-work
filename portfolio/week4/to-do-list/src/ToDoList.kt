@@ -25,14 +25,14 @@ class ToDoList() {
         
 
         // for each line use .toString to convert it to valid format
-
-        println("load called with: $filename")
         Path(filename).forEachLine { line ->
-            println("read line: $line")
             val (date, status, description) = line.split(": ")
             items.add(ToDoItem(LocalDate.parse(date), ItemStatus.valueOf(status), description))
+
+
         }
-        println("items after load: ${items.size}")
+
+        
         
     
     }
