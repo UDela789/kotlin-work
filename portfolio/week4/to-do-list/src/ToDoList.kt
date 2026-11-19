@@ -28,13 +28,7 @@ class ToDoList() {
         Path(filename).forEachLine { line ->
             val (date, status, description) = line.split(": ")
             items.add(ToDoItem(LocalDate.parse(date), ItemStatus.valueOf(status), description))
-
-
         }
-
-        
-        
-    
     }
 
     fun save(filename: String) {
@@ -58,7 +52,11 @@ class ToDoList() {
         // Write code here to return a list of items with the matching
         // status, or a list of all items if status argument is null
        
+       if(status == null){
+        return items.toList()
+       }else{
         return items.filter {it.status == status}
+       } 
     }
 
     fun getItemsDueOn(date: LocalDate): List<ToDoItem> {
